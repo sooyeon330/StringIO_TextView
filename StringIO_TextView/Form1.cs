@@ -24,9 +24,26 @@ namespace StringIO_TextView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            this.lbResult.Text = this.OrgStr + this.textEdit.Text;
+            if (TextCheck())
+            {
+                this.lbResult.Text = this.OrgStr + this.textEdit.Text;
+            }
         }
-        
+        private bool TextCheck()
+        {
+            if (this.textEdit.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("텍스트를 입력하세요!", "알림",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.textEdit.Focus();
+                return false;
+            }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

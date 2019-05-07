@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace StringIO_TextView
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form //patrial
     {
         string OrgStr = "";
         public Form1()
@@ -19,12 +19,19 @@ namespace StringIO_TextView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            OrgStr = this.lbResult.Text;
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.lbResult.Text = this.OrgStr + this.textEdit.Text;
+        }
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }

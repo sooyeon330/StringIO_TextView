@@ -49,6 +49,13 @@ namespace StringIO_TextView
 
         }
 
-       
+        private void textEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                e.Handled=true;
+                btnEdit_Click(sender,e);
+            }
+        }
     }
 }
